@@ -24,4 +24,19 @@ module RandomData
     letters.shuffle!
     letters[0,rand(3..8)].join
   end
+
+  def self.random_integer
+    integers = []
+    rand(1..2).times do
+      integers << random_number
+    end
+
+    integers.join
+  end
+
+  def self.random_number
+    numbers = (0..9).to_a
+    numbers.shuffle!
+    numbers[0,rand(1)].join
+  end
 end
