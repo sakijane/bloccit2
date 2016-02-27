@@ -18,7 +18,7 @@ RSpec.describe User, type: :model do
   it { is_expected.to validate_length_of(:password).is_at_least(6) }
 
   # Shoulda tests for name capitalization
-  it { is_expected.to validate_presence_of(:name).is_capitalized }
+#  it { is_expected.to validate_presence_of(:name).is_capitalized }
 
   describe "attributes" do
     it "should respond to name" do
@@ -27,6 +27,12 @@ RSpec.describe User, type: :model do
 
     it "should respond to email" do
       expect(user).to respond_to(:email)
+    end
+
+    it "should format the user's name" do
+      user.name = "bloccit user"
+      user.save
+      expect(user.name).to eq "Bloccit User"
     end
   end
 
