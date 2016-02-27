@@ -17,6 +17,9 @@ RSpec.describe User, type: :model do
   it { is_expected.to have_secure_password }
   it { is_expected.to validate_length_of(:password).is_at_least(6) }
 
+  # Shoulda tests for name capitalization
+  it { is_expected.to validate_presence_of(:name).is_capitalized }
+
   describe "attributes" do
     it "should respond to name" do
       expect(user).to respond_to(:name)
