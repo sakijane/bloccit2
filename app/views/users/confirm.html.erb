@@ -1,12 +1,12 @@
 <h2>Sign Up Confirmation</h2>
 <h4>Are you sure these values are correct?</h4>
 <div class="row">
-  <div class="col-md-8">
-    <p>Email: <%= user.email %></p>
-    <p>Name: <%= user.name %></p>
+  <div class="form-group">
+    <p>Email: <%= @user.email %></p>
+    <p>Name: <%= @user.name %></p>
   </div>
   <div class="form-group">
-    <%= button_to "Yes", {controller: "users", action: "create", params: params}, class: 'btn btn-success' %>
-    <%= button_to "No", new_user_post_path(@user), class: 'btn' %>
+    <%= button_to "Yes", {controller: "users", action: "create", params: params}, class: 'btn btn-success submit-button' %>
+    <%= button_to "No", new_user_path, class: 'btn' %>
   </div>
 </div>
